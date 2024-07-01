@@ -1,12 +1,21 @@
 unreleased
 ----------
 
+- new functions `Ast_builder.{e,p}list_tail` that take an extra tail
+  expression/pattern argument parameter compared to `Ast_builder.{e,p}list`, so
+  they can build ASTs like `a :: b :: c` instead of only `[ a; b ]`.
+  (#498, #502, @v-gb, @NathanReb)
+
 - Fix `Longident.parse` so it also handles indexing operators such as
   `.!()`, `.%(;..)<-`, or `Vec.(.%())` (#494, @octachron)
 
 - Add a `special_function'` variant which directly takes a `Longident.t`
   argument to avoid the issue that `Longident.t` cover distinct syntaxic classes
   which cannot be easily parsed by a common parser (#496, @octachron).
+
+- Keep location ranges consistent when migrating `Pexp_function` nodes from 5.2+
+  to older versions (#504, @jchavarri)
+
 
 0.32.1 (2024-04-23)
 -------------------
