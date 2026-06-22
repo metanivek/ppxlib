@@ -6,6 +6,9 @@ unreleased
 
 - Add support for OCaml 5.6 primitive aliases (#642, @NathanReb)
 
+- Remove reduntant module type copy from migrate_504_503, preventing
+  exponential blowup with many "with" constraints. (#644, @smuenzel)
+
 0.38.0
 ------
 
